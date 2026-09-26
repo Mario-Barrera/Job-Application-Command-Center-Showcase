@@ -159,25 +159,25 @@ This keeps the original application timeline intact while allowing status progre
 
 ## Screenshots
 
-Application screenshots will be stored in:
+Application screenshots are located in:
 
 [docs/images/](./docs/images/)
 
 ### Application Dashboard
 
-<!-- Screenshot will be added here -->
+![Job Application Command Center dashboard](./docs/images/dashboard.jpeg)
 
-### Add Application
+### Delete Confirmation
 
-<!-- Screenshot will be added here -->
+![Delete application confirmation dialog](./docs/images/delete-confirmation.png)
 
-### Search and Filtering
+### Search, Filter, and Sort
 
-<!-- Screenshot will be added here -->
+![Job application search filter and sort interface](./docs/images/search-filter-sort.jpeg)
 
-### Status Management
+### Status Tracking
 
-<!-- Screenshot will be added here -->
+![Application status tracking with status-change date](./docs/images/status-tracking.png)
 
 ---
 
