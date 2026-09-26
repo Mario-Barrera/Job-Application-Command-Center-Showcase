@@ -1,0 +1,21 @@
+{
+  "name": "job-application-command-center-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public portfolio showcase for the Job Application Command Center full-stack application.",
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mario-Barrera/Job-Application-Command-Center-Showcase.git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "react": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
