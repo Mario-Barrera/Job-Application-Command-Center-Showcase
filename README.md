@@ -92,44 +92,27 @@ Sensitive configuration values such as database credentials are stored in enviro
 
 ## Selected Code Examples
 
-This showcase repository contains selected portions of the application rather than the complete application source tree.
+The public examples below are curated portions of the full application. They demonstrate key frontend, backend, and database implementation patterns while the complete application source remains private. Some examples are intentionally presented as focused excerpts and are not intended to run as a standalone copy of the application.
 
 ### Frontend Examples
 
-Selected React and TypeScript examples will demonstrate:
+[Application List Interactions](./frontend-examples/application-list-interactions.tsx) – React and TypeScript component demonstrating search, status filtering, date and company sorting, status updates, delete confirmation, error handling, and conditional rendering.
 
-- Component design
-- Typed props and application models
-- Form state management
-- API requests
-- Search, filtering, and sorting
-- Loading and error states
-- Status updates
-- User-interface event handling
+[Application Form](./frontend-examples/application-form.tsx) – Controlled React form demonstrating typed state, asynchronous submission, loading state, error handling, and form reset after a successful save.
+
+[Application Data Flow](./frontend-examples/application-data-flow.ts) – React data-management example demonstrating initial API loading, POST, PATCH, and DELETE requests, HTTP error handling, and immutable state updates.
 
 ### Backend Examples
 
-Selected backend examples will demonstrate:
+[Application Routes](./backend-examples/applications-routes.js) – Express and PostgreSQL examples for retrieving and creating applications using asynchronous route handlers, parameterized SQL, date formatting, and structured HTTP responses.
 
-- Express REST API routes
-- PostgreSQL integration
-- Request validation
-- CRUD operations
-- Status-update handling
-- HTTP status handling
-- Error handling
+[Status Update Route](./backend-examples/status-update-route.js) – PATCH endpoint demonstrating status validation, parameterized SQL, `400` and `404` handling, and conditional tracking of `status_changed_on` only when an application's status changes.
 
-### Database Examples
+[Delete Application Route](./backend-examples/delete-application-route.js) – DELETE endpoint demonstrating parameterized SQL, deleted-record verification, `404` handling, and structured success and error responses.
 
-Selected database examples will demonstrate:
+### Database Example
 
-- PostgreSQL table design
-- Primary keys
-- Default values
-- Application status storage
-- Application-date storage
-- Status-change date tracking with `status_changed_on`
-- Database constraints
+[Sample PostgreSQL Schema](./database/sample-schema.sql) – Relational schema demonstrating a primary key, required fields, a default application status, original application-date storage, and independent status-change tracking.
 
 ---
 
@@ -137,23 +120,9 @@ Selected database examples will demonstrate:
 
 Each application stores both its original application date and the date of its most recent status change.
 
-The original:
+The `date_applied` field remains unchanged when an application's status is updated, while `status_changed_on` records the date of the most recent status change.
 
-```text
-date_applied
-```
-
-remains unchanged when an application's status is updated.
-
-The separate:
-
-```text
-status_changed_on
-```
-
-field records the date associated with a status change.
-
-This keeps the original application timeline intact while allowing status progression to be tracked independently.
+This preserves the original application timeline while allowing status progression to be tracked independently.
 
 ---
 
@@ -209,15 +178,29 @@ Job-Application-Command-Center-Showcase/
 |
 +-- README.md
 +-- .gitignore
++-- package.json
++-- package-lock.json
++-- tsconfig.json
 |
 +-- docs/
 |   +-- images/
+|       +-- dashboard.jpeg
+|       +-- delete-confirmation.png
+|       +-- search-filter-sort.jpeg
+|       +-- status-tracking.png
 |
 +-- frontend-examples/
+|   +-- application-data-flow.ts
+|   +-- application-form.tsx
+|   +-- application-list-interactions.tsx
 |
 +-- backend-examples/
+|   +-- applications-routes.js
+|   +-- delete-application-route.js
+|   +-- status-update-route.js
 |
 +-- database/
+    +-- sample-schema.sql
 ```
 
 ---
