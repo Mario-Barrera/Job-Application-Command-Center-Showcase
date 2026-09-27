@@ -2,6 +2,7 @@
   "name": "job-application-command-center-showcase",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Public portfolio showcase for the Job Application Command Center full-stack application.",
   "scripts": {
     "typecheck": "tsc"
