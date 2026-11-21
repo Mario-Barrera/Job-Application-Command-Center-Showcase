@@ -68,6 +68,29 @@ Application records maintain the original application date while separately trac
 
 ---
 
+## Automated Testing & Continuous Integration (CI)
+
+Implemented a GitHub Actions Continuous Integration (CI) pipeline that automatically validates code changes through automated testing, ESLint checks, and production builds.
+
+### Automated Testing:
+- 6 frontend unit tests using Vitest.
+- 9 Express API tests using Supertest with mocked database operations.
+- 5 PostgreSQL integration tests covering database connectivity and CRUD operations.
+- 4 Express REST API integration tests using Supertest and a real PostgreSQL test database.
+
+### CI Pipeline Features:
+- Automatically runs all 24 tests on pushes to `main` and pull requests targeting `main`.
+- Configures a temporary PostgreSQL 17 Docker service for integration testing.
+- Creates an isolated test database with restricted user permissions.
+- Runs automated ESLint validation and production builds.
+- Reports test and build results directly through GitHub Actions.
+
+**Verification:** All 24 automated tests successfully passed in GitHub Actions.
+
+The CI implementation is maintained in the private application repository. This public showcase documents the testing approach and results.
+
+---
+
 ## Application Architecture
 
 The application follows a client-server architecture:
